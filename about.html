@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/61bd2f875a.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
+    <style>
+        .right-hand-text{
+            text-align: right;
+            padding-right: 20px;
+        }
+        .btn{
+    background: #efefef;
+    height: 30px;
+    width: 60px;
+    border-radius: 20px;
+    border: 0;
+    outline: 0;
+    cursor: pointer;
+    transition: background 0.5s, margin-left 0.5s;
+
+        }
+        .btn span{
+            display: block;
+            background: #999;
+            height: 26px;
+            width: 26px;
+            border-radius: 50%;
+            margin-left: 2px;
+
+        }
+        .lamp-container{
+                position: absolute;
+                top: -15%;
+                left: 22%;
+                width: 200px;
+
+            }
+            .lamp{
+                width: 100%;
+
+            }
+            .light{
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translate(-50%);
+                width: 700px;
+                margin-left: -10px;
+                margin-top: -10px;
+                opacity: 0;
+                transition: opacity 0.5s;
+                z-index: -1;
+            }
+            .active{
+                background: green;
+            }
+            .active span{
+                background: #fff;
+                margin-left: 31px;
+            }
+            .on{
+                opacity: 1;
+            }
+            .vido{
+                width: 900px;
+                z-index: -4;
+                height: 600px;
+            }
+            .vid{
+                width: 900px;
+                height: 600px;
+                position:absolute;
+                top: 50%;
+                left: 20%;
+                text-align: center;
+                z-index: 4;
+            }
+
+            .container{
+            display: inline-flex;
+            position: absolute;
+            top: 60%;
+
+        }
+
+        .dyanmic{
+            color: #fff;
+            font-size: 60px;
+            font-weight: 400;
+
+        }
+        .txt li{
+            list-style: none;
+            font-size: 48px;
+            color: tomato;
+            position: relative;
+            font-weight: 500;
+            height: 85px;
+            top: 0;
+            animation: slide 6.8s steps(4)infinite;
+           
+        }
+
+        @keyframes slide {
+            100%{
+                top: -360px;
+                
+
+            }
+        }
+
+
+         .txt{
+            margin-left: 20px;
+            height: 70px;
+            line-height: 90px;
+            overflow: hidden;
+        }
+        .txt li span{
+            position: relative;
+        }
+        .txt li span::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            background-color: var(--black);
+            height: 70px;
+            width:100%;
+            border-left: 1px solid tomato;
+            animation: typing 1.7s steps(13)infinite;
+            /* animation-timing-function: cubic-bezier(.65,.19,.26,.63); */
+
+        }
+        @keyframes typing{
+            100%{
+                left:100%;
+                margin: 0 -35px 0 35px;
+
+            }
+        }
+
+        .senes{
+            position: absolute;
+            top: 720px;
+            left: 35%;
+        }
+        .caption{
+            position: absolute;
+            top: 130%;
+            width: 600px;
+            left: 15%;
+        }
+    </style>
+</head>
+<body>
+    <header id="hdd">
+        <nav>
+            <div class="left">
+                <p><i class="fa-solid fa-code"></i>S MOHIT</p>
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="#projects">Project</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="https://www.linkedin.com/in/mohit-shrivas-73268a231/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+                    <li><a href="https://github.com/Mohit-Shrivas" target="_blank"><i class="fa-brands fa-github-square"></a></i></li>
+                    <button class="resumebtn" type="button">Resume</button>
+                    <button class="btn" type="button" onclick="toggleBtn()" id="btn"><span></span></button>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="right-hand-text">
+        <P class="name">Hi, my name is <span>Mohit Shrivas.</span></p>
+            <h2> I'm frontend Dev.</h2>
+    </div>
+    
+    <div class="lamp-container">
+        <img src="image/lamp.png" class="lamp">
+        <img src="image/light.png" class="light" id="onlight">
+    </div>
+    <div class="vid">
+        <img src="image\ezgif.com-gif-maker.png">
+        
+    </div>
+    <div class="container vid senes">
+        <div class="dyanmic">I'm a</div>
+        <ul class="txt">
+            <li><span>Developer.</span></li>
+            <li><span>Freelancer.</span></li>
+            <li><span>Desiner.</span></li>
+            <li><span>Student.</span></li>
+        </ul>
+    </div>
+    <p class="caption">
+                “A successful website does three things:
+    It attracts the right kinds of visitors.
+    Guides them to the main services or product you offer.
+    Collect Contact details for future ongoing relation.”
+    <br>
+    <br>
+    <strong style="text-align:right; color: yellow;">
+        “Let us take you into a deeper experience, make a moment a lasting conveyable memory. Let us help build your tribe.”
+    </strong>
+    </p>
+
+
+
+    <script>
+        const btn = document.getElementById("btn");
+        const light = document.getElementById("onlight");
+    
+        function toggleBtn(){
+            btn.classList.toggle("active");
+            light.classList.toggle("on");
+            
+    
+        }
+    </script>
+</body>
+</html>
