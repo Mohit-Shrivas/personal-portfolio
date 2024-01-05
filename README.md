@@ -1,6 +1,6 @@
 # personal portfolio to show case my skills
 ```
-The Name bar of page is showing linding and github profile
+The Name bar of page is showing linkdin and github profile
 ```
 
 # Tech steck 
